@@ -39,14 +39,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.NombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCursos = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imparte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumLecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActTabla = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCurso
@@ -142,30 +142,30 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(275, 236);
+            this.txtDescripcion.Location = new System.Drawing.Point(285, 236);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(269, 63);
+            this.txtDescripcion.Size = new System.Drawing.Size(259, 63);
             this.txtDescripcion.TabIndex = 51;
             // 
-            // dataGridView2
+            // dgvCursos
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NombreCurso,
+            this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
             this.Imparte,
             this.NumLecciones,
             this.Descripcion});
-            this.dataGridView2.Location = new System.Drawing.Point(570, 123);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(436, 176);
-            this.dataGridView2.TabIndex = 52;
+            this.dgvCursos.Location = new System.Drawing.Point(570, 123);
+            this.dgvCursos.Name = "dgvCursos";
+            this.dgvCursos.RowTemplate.Height = 25;
+            this.dgvCursos.Size = new System.Drawing.Size(436, 176);
+            this.dgvCursos.TabIndex = 52;
             // 
-            // NombreCurso
+            // Nombre
             // 
-            this.NombreCurso.HeaderText = "Nombre Curso";
-            this.NombreCurso.Name = "NombreCurso";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
             // 
             // Imparte
             // 
@@ -190,6 +190,7 @@
             this.btnActTabla.TabIndex = 53;
             this.btnActTabla.Text = "Actualizar tabla";
             this.btnActTabla.UseVisualStyleBackColor = true;
+            this.btnActTabla.Click += new System.EventHandler(this.btnActTabla_Click);
             // 
             // btnCerrar
             // 
@@ -209,7 +210,7 @@
             this.ClientSize = new System.Drawing.Size(1009, 358);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnActTabla);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvCursos);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.btnCurso);
             this.Controls.Add(this.txtLecciones);
@@ -221,9 +222,13 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MdiChildrenMinimizedAnchorBottom = false;
+            this.MinimizeBox = false;
             this.Name = "AgregarCurso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarCurso";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,12 +247,12 @@
         private Label label2;
         private Label label1;
         private TextBox txtDescripcion;
-        private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn NombreCurso;
+        private DataGridView dgvCursos;
+        private Button btnActTabla;
+        private Button btnCerrar;
+        private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Imparte;
         private DataGridViewTextBoxColumn NumLecciones;
         private DataGridViewTextBoxColumn Descripcion;
-        private Button btnActTabla;
-        private Button btnCerrar;
     }
 }

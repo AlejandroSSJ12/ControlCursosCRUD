@@ -30,13 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvAlumnos = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreAlumnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.progresoCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaIncioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFinalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Progreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alumnoModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -46,17 +45,14 @@
             // 
             // dgvAlumnos
             // 
-            this.dgvAlumnos.AutoGenerateColumns = false;
             this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlumnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nombreAlumnoDataGridViewTextBoxColumn,
-            this.apellidoDataGridViewTextBoxColumn,
-            this.nombreCursoDataGridViewTextBoxColumn,
-            this.progresoCursoDataGridViewTextBoxColumn,
-            this.fechaIncioDataGridViewTextBoxColumn,
-            this.fechaFinalDataGridViewTextBoxColumn});
-            this.dgvAlumnos.DataSource = this.alumnoModelBindingSource;
+            this.Nombre,
+            this.Apellido,
+            this.Curso,
+            this.Progreso,
+            this.FechaInicio,
+            this.FechaFinal});
             this.dgvAlumnos.Location = new System.Drawing.Point(46, 112);
             this.dgvAlumnos.Name = "dgvAlumnos";
             this.dgvAlumnos.RowTemplate.Height = 25;
@@ -64,47 +60,35 @@
             this.dgvAlumnos.TabIndex = 0;
             this.dgvAlumnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // idDataGridViewTextBoxColumn
+            // Nombre
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
             // 
-            // nombreAlumnoDataGridViewTextBoxColumn
+            // Apellido
             // 
-            this.nombreAlumnoDataGridViewTextBoxColumn.DataPropertyName = "NombreAlumno";
-            this.nombreAlumnoDataGridViewTextBoxColumn.HeaderText = "NombreAlumno";
-            this.nombreAlumnoDataGridViewTextBoxColumn.Name = "nombreAlumnoDataGridViewTextBoxColumn";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
             // 
-            // apellidoDataGridViewTextBoxColumn
+            // Curso
             // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            this.Curso.HeaderText = "Curso";
+            this.Curso.Name = "Curso";
             // 
-            // nombreCursoDataGridViewTextBoxColumn
+            // Progreso
             // 
-            this.nombreCursoDataGridViewTextBoxColumn.DataPropertyName = "NombreCurso";
-            this.nombreCursoDataGridViewTextBoxColumn.HeaderText = "NombreCurso";
-            this.nombreCursoDataGridViewTextBoxColumn.Name = "nombreCursoDataGridViewTextBoxColumn";
+            this.Progreso.HeaderText = "Progreso";
+            this.Progreso.Name = "Progreso";
             // 
-            // progresoCursoDataGridViewTextBoxColumn
+            // FechaInicio
             // 
-            this.progresoCursoDataGridViewTextBoxColumn.DataPropertyName = "ProgresoCurso";
-            this.progresoCursoDataGridViewTextBoxColumn.HeaderText = "ProgresoCurso";
-            this.progresoCursoDataGridViewTextBoxColumn.Name = "progresoCursoDataGridViewTextBoxColumn";
+            this.FechaInicio.HeaderText = "Fecha Inicio";
+            this.FechaInicio.Name = "FechaInicio";
             // 
-            // fechaIncioDataGridViewTextBoxColumn
+            // FechaFinal
             // 
-            this.fechaIncioDataGridViewTextBoxColumn.DataPropertyName = "FechaIncio";
-            this.fechaIncioDataGridViewTextBoxColumn.HeaderText = "FechaIncio";
-            this.fechaIncioDataGridViewTextBoxColumn.Name = "fechaIncioDataGridViewTextBoxColumn";
-            // 
-            // fechaFinalDataGridViewTextBoxColumn
-            // 
-            this.fechaFinalDataGridViewTextBoxColumn.DataPropertyName = "FechaFinal";
-            this.fechaFinalDataGridViewTextBoxColumn.HeaderText = "FechaFinal";
-            this.fechaFinalDataGridViewTextBoxColumn.Name = "fechaFinalDataGridViewTextBoxColumn";
+            this.FechaFinal.HeaderText = "Fecha Final";
+            this.FechaFinal.Name = "FechaFinal";
             // 
             // alumnoModelBindingSource
             // 
@@ -140,8 +124,12 @@
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvAlumnos);
+            this.MaximizeBox = false;
+            this.MdiChildrenMinimizedAnchorBottom = false;
+            this.MinimizeBox = false;
             this.Name = "MostrarDatos";
-            this.Text = "MostrarDatos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "7";
             this.Load += new System.EventHandler(this.MostrarDatos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoModelBindingSource)).EndInit();
@@ -156,12 +144,11 @@
         private Label label1;
         private Button btnCerrar;
         private BindingSource alumnoModelBindingSource;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nombreAlumnoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nombreCursoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn progresoCursoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn fechaIncioDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn fechaFinalDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
+        private DataGridViewTextBoxColumn Curso;
+        private DataGridViewTextBoxColumn Progreso;
+        private DataGridViewTextBoxColumn FechaInicio;
+        private DataGridViewTextBoxColumn FechaFinal;
     }
 }

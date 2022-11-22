@@ -11,6 +11,18 @@ namespace EjercicioMongoDB.Models
 {
     public static class Queries
     {
+        public static List <AlumnoModel> ObtenerAlumnos()
+        {
+            var AlumnList = ConexionMongo.GetAlumnoCollection();
+            List<AlumnoModel> result = AlumnList.Find(d => true).ToList();
+            return result;
+        }
+        public static List<CursoModel> ObtenerCursos()
+        {
+            var CursoList = ConexionMongo.GetCursoCollection();
+            List<CursoModel> result = CursoList.Find(d => true).ToList();
+            return result;
+        }
         public static void InsertarAlumno(AlumnoModel alumnoModel)
         {
             var alumModel = ConexionMongo.GetAlumnoCollection();

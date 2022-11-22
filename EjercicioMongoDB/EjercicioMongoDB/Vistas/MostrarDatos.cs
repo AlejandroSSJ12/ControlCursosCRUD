@@ -16,6 +16,7 @@ namespace EjercicioMongoDB.Vistas
         public MostrarDatos()
         {
             InitializeComponent();
+            CargarGrid();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -28,10 +29,11 @@ namespace EjercicioMongoDB.Vistas
 
         }
 
-        private void CargarGrid(List<AlumnoModel> db)
+        private void CargarGrid()
         {
             dgvAlumnos.Rows.Clear();
-            foreach (AlumnoModel alumn in db)
+            List<AlumnoModel> alumnoList = Queries.ObtenerAlumnos();
+            foreach (AlumnoModel alumn in alumnoList)
             {
                 dgvAlumnos.Rows.Add(alumn.NombreAlumno, alumn.Apellido, alumn.NombreCurso, alumn.ProgresoCurso, alumn.FechaIncio, alumn.FechaFinal);
             }

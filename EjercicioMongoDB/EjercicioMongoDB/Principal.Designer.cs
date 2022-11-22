@@ -32,6 +32,7 @@
             this.btnAct = new System.Windows.Forms.Button();
             this.btnCurso = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAggAlumno
@@ -68,23 +69,37 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(34, 21);
+            this.label1.Location = new System.Drawing.Point(17, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 27);
             this.label1.TabIndex = 24;
             this.label1.Text = "Menu Principal";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 15);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "(No olvides primero llenar un curso)";
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightPink;
-            this.ClientSize = new System.Drawing.Size(226, 245);
+            this.ClientSize = new System.Drawing.Size(212, 245);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCurso);
             this.Controls.Add(this.btnAct);
             this.Controls.Add(this.btnAggAlumno);
+            this.MaximizeBox = false;
+            this.MdiChildrenMinimizedAnchorBottom = false;
+            this.MinimizeBox = false;
             this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -97,5 +112,6 @@
         private Button btnAct;
         private Button btnCurso;
         private Label label1;
+        private Label label2;
     }
 }

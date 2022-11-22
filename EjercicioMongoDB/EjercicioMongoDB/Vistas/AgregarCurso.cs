@@ -15,25 +15,45 @@ namespace EjercicioMongoDB.Vistas
     {
         public AgregarCurso()
         {
+            
             InitializeComponent();
+            CargarGrid();
         }
 
+        private void CargarGrid()
+        {
+            dgvCursos.Rows.Clear();
+            List<CursoModel> cursoList = Queries.ObtenerCursos();
+            foreach (CursoModel curso in cursoList)
+            {
+                dgvCursos.Rows.Add(curso.NombreCurso, curso.NombreImparte, curso.NumLecciones, curso.Descripcion);
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
-            if (txtNombreCurso.Text == "" || txtDescripcion.Text == "" || txtImparte.Text == "" || txtLecciones.Text == "")
+            try
             {
-                MessageBox.Show("Revisar que todo este lleno");
+                if (txtNombreCurso.Text == "" || txtDescripcion.Text == "" || txtImparte.Text == "" || txtLecciones.Text == "")
+                {
+                    MessageBox.Show("Revisar que todo este lleno");
+                }
+                CursoModel cursoModel = new CursoModel()
+                {
+                    NombreCurso = txtNombreCurso.Text,
+                    NombreImparte = txtImparte.Text,
+                    NumLecciones = txtLecciones.Text,
+                    Descripcion = txtDescripcion.Text
+
+                };
+                Queries.InsertarCurso(cursoModel);
+                MessageBox.Show("Datos guardados correctamente");
+                CargarGrid();
             }
-            CursoModel cursoModel = new CursoModel()
+            catch
             {
-                NombreCurso = txtNombreCurso.Text,
-                NombreImparte = txtImparte.Text,
-                NumLecciones= txtLecciones.Text,
-                Descripcion = txtDescripcion.Text
-                
-            };
-            Queries.InsertarCurso(cursoModel);
-            MessageBox.Show("Datos guardados correctamente");
+                MessageBox.Show("Algo ha sucedido, intentalo nuevamente");
+            }
+            
         }
 
         private void textNombreCurso_TextChanged(object sender, EventArgs e)
@@ -44,6 +64,11 @@ namespace EjercicioMongoDB.Vistas
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnActTabla_Click(object sender, EventArgs e)
+        {
+            CargarGrid();
         }
     }
 }

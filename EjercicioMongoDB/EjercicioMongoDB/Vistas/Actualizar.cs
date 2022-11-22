@@ -25,20 +25,27 @@ namespace EjercicioMongoDB
 
         private void button2_Click(object sender, EventArgs e)
         {
- 
-            AlumnoModel alumnoModel = new AlumnoModel()
+            try
             {
-                Id = ID.Text,
-                NombreAlumno = txtNombreAlumno.Text,
-                Apellido = apellido.Text,
-                NombreCurso = txtNombreCurso.Text,
-                ProgresoCurso = (string)listProceso.SelectedItem,
-                FechaIncio = dateTimeInicio.Text,
-                FechaFinal = dateTimeFinal.Text
-            };
-            Queries.Actualizar(alumnoModel);
-            MessageBox.Show("Datos actualizados correctamente");
-            this.Close();
+                AlumnoModel alumnoModel = new AlumnoModel()
+                {
+                    Id = ID.Text,
+                    NombreAlumno = txtNombreAlumno.Text,
+                    Apellido = apellido.Text,
+                    NombreCurso = txtNombreCurso.Text,
+                    ProgresoCurso = (string)listProceso.SelectedItem,
+                    FechaIncio = dateTimeInicio.Text,
+                    FechaFinal = dateTimeFinal.Text
+                };
+                Queries.Actualizar(alumnoModel);
+                MessageBox.Show("Datos actualizados correctamente");
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Algo ha ocurrido, intentalo nuevamente");
+            }
+            
         }
 
         private void btnBuscarAlumno_Click(object sender, EventArgs e)
